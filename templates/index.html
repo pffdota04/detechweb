@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Detech Object</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../static/default.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="myModal" class="modal">
+
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+  
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
+  
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+  </div>
+  <div id="header">
+    <h1>What objects are in your photo? </h1>
+    <h2><a href="http://hcmute.edu.vn/">UTE Deep Learning</a></h2>
+  </div>
+  <div style="clear: both;">&nbsp;</div>
+  <div id="content">
+    <div><img src="../static/images/img1.jpg" alt="" id="intro-img" /></div>
+    <div id="colTwo">
+      <h2>Upload your image</h2>
+      <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+          <p>
+            <input type="file" name="file" autocomplete="off" required>
+          </p>
+        </dl>
+        <p>
+          <input type="submit" value="Submit">
+        </p>
+      </form>
+      {% if filename %}
+      <div>
+        <img src="{{ url_for('display_image', filename=filename) }}" width="400">
+        >>>>>
+        <img src="{{ url_for('display_output', filename=output) }}" width="400" id="outimg">
+      </div>
+      {{ name }} 
+      {% endif %}
+      <p><strong>Nhận diện đồ vật </strong> <a href="http://hcmute.edu.vn/"><strong>UTE Deep Learning</strong></a>
+      </p>
+      <p>Yêu cầu phần cứng:</p>
+      <ul>
+        <li><a href="#">Chạy nhanh, bền, tốt, kích cỡ nhỏ gọn, thiết kế trang nhã.</a></li>
+        <li><a href="#">Còn nguyên tem bảo hành, không được trầy xước dù là vết nhỏ.</a></li>
+        <li><a href="#">Tương thích dễ dàng với các thiết bị ngoại vi như: bếp, chổi quét nhà.</a></li>
+        <li><a href="#">Hoạt động tốt trong môi trường như chợ, siêu thị.</a></li>
+      </ul>
+      <p>Yolov3 là gì? bla bla bla </p>
+      <p>Giới thiệu công nghệ bla bla bla </p>
+      <p>Giới thiệu công nghệ model </p>
+      <p>Giới thiệu công nghệ dataset </p>
+      <p>Giới thiệu công nghệ link source:   </p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quaerat explicabo ut nihil cumque perspiciatis eius laboriosam iusto repudiandae officia sed minima quisquam iste est praesentium sint culpa quos provident.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa dolorum temporibus, architecto numquam perferendis eum quam fugiat nesciunt unde repellat aspernatur accusamus, dolorem beatae illum. Pariatur quae natus ducimus voluptatem?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore odio veniam, voluptate aspernatur earum aliquid, perferendis vitae doloribus totam magnam quis praesentium cum, asperiores laborum deserunt enim recusandae sequi!
+      </p>
+    </div>
+    <div style="clear: both;">&nbsp;</div>
+  </div>
+  <div id="footer">
+    <p>Copyright &copy; 2021 HCMUTE <a href="http://hcmute.edu.vn/"><strong>Nhận diện đồ vật</strong></a></p>
+  </div>
+</body>
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById("outimg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+    modal.style.display = "none";
+  }
+  </script>
+
+
+</html>
