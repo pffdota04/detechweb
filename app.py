@@ -31,8 +31,7 @@ def allowed_file(filename):
 # --------------------- ROUTE ------------------#
 @app.route('/')
 def upload_form():
-	return render_template('index.html')
-
+		return render_template('index.html', filename="meo.jpg", output="meo.jpg", name="'Trong ảnh của bạn, chúng tôi tìm thấy: 2preson, 1 cat")   # example image
 @app.route('/', methods=['POST'])
 def upload_image():
 	if 'file' not in request.files:
