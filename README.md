@@ -4,7 +4,7 @@
 https://drive.google.com/drive/folders/1SYBAV2Tk4mCsvi7IO4zKWCLB2MkVzAUx?usp=sharing
 
 ### 2. Install Framwork:
-pip install tensorflow
+pip install tensorflow   
 pip install flask
 
 ### 3. cd to folder and run app.py
